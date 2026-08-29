@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Message Board</title>
+</head>
+
+<body>
+    <header>
+        <h1>Message Board</h1>
+        <a href="/new" class="new-message-btn">+ New Message</a>
+        <p class="subtitle">A place to leave a little something behind.</p>
+    </header>
+    <main>
+        <% messages.forEach((message)=> { %>
+
+            <p>User: <%= message.user %>
+            </p>
+            <p>Message: <%= message.text %>
+            </p>
+            <p>Date: <%= message.added %>
+            </p>
+
+            <% }); %>
+    </main>
+
+</body>
+
+</html>

@@ -1,11 +1,12 @@
-import express from "express";
-
+const express = require("express");
+const path = require("node:path");
+const indexRouter = require("./routes/indexRouter");
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello, world");
-});
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
+app.use("/", indexRouter);
 
 app.listen(PORT, (error) => {
   // This is important!
