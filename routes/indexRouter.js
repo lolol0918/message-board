@@ -40,4 +40,11 @@ indexRouter.post("/new", (req, res) => {
   res.redirect("/");
 });
 
+indexRouter.get("/message/:id", (req, res) => {
+  const message = messages[req.params.id];
+  res.render("message", {
+    message: message,
+  });
+});
+
 module.exports = indexRouter;

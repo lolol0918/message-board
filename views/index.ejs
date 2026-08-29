@@ -15,7 +15,7 @@
         <p class="subtitle">A place to leave a little something behind.</p>
     </header>
     <main>
-        <% messages.forEach((message)=> { %>
+        <% messages.forEach((message, index)=> { %>
 
             <p>User: <%= message.user %>
             </p>
@@ -23,6 +23,8 @@
             </p>
             <p>Date: <%= message.added %>
             </p>
+
+            <a href="/message/<%= index %>">Open</a>
 
             <% }); %>
     </main>
