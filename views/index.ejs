@@ -17,14 +17,14 @@
     <main>
         <% messages.forEach((message, index)=> { %>
 
-            <p>User: <%= message.user %>
+            <p>User: <%= message.author %>
             </p>
             <p>Message: <%= message.text %>
             </p>
             <p>Date: <%= message.added %>
             </p>
 
-            <a href="/message/<%= index %>">Open</a>
+            <a href="/message/<%= message.id %>">Open</a>
 
             <% }); %>
     </main>

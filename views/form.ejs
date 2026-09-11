@@ -9,11 +9,19 @@
 
     <h1>Create a new message</h1>
 
+    <% if (typeof errors !== "undefined" && errors.length) { %>
+        <ul class="errors">
+            <% errors.forEach(err => { %>
+                <li><%= err.msg %></li>
+            <% }); %>
+        </ul>
+    <% } %>
+
     <form method="POST" action="/new">
 
-        <input type="text" name="author" placeholder="Your name">
+        <input type="text" name="author" placeholder="Your name" value="<%= typeof author !== 'undefined' ? author : '' %>">
 
-        <input type="text" name="message" placeholder="Your message">
+        <input type="text" name="message" placeholder="Your message" value="<%= typeof message !== 'undefined' ? message : '' %>">
 
         <button type="submit">Submit</button>
 
